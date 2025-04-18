@@ -1,7 +1,7 @@
-# Self-Tutorial Repository
+<h1 align="center">Self-Tutorial </h1>
 
-Welcome to my **Self-Tutorial** repository 🎓  
-This repository includes a curated collection of my **course assignments**, **code implementations**, and **learning notes** as I study and grow in the fields of computer science, artificial intelligence, and machine learning.
+
+Welcome to my **Self-Tutorial** repository. 🎓   This repository includes a curated collection of my **course assignments**, **code implementations**, and **learning notes** as I study and grow in the fields of computer science, artificial intelligence, and machine learning.
 
 ---
 
