@@ -11,9 +11,10 @@ This repository contains my code implementations and reports for the assignments
 
 ## Homework Titles
 - Lab0: Run Vision Model & SLM on GPU [Spec](https://hackmd.io/@ccyangus/ByCbNoitJg)  
-- Lab1: Classification  
-- Lab2: Convolutional Neural Networks (CNN) 
-- Lab3: 
+- Lab1: Prune Vision Model [Spec](https://hackmd.io/@ccyangus/S1vhEooKkg)
+- Lab2: Quantization [Spec](https://hackmd.io/@ccyangus/BJE4BsjtJe) 
+- Lab3: Triton GPU programming for neural networks [Spec](https://hackmd.io/@ccyangus/ryMerm8Ryl)
+
 
 
 ## Code Template
