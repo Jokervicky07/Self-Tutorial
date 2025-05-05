@@ -13,7 +13,7 @@ This repository contains my code implementations and reports for the assignments
 ## Homework Titles
 - HW-01: Regression  
 - HW-02: Classification  
-- HW-03: Convolutional Neural Networks (CNN)  **(⚠️ Not Yet Implemented)**
+- HW-03: Convolutional Neural Networks (CNN)  **Next: finish cross-validation and Focalloss**
 - HW-04: Self-Attention Mechanisms  **(⚠️ Not Yet Implemented)**
 - HW-05: Transformer Architecture  **(⚠️ Not Yet Implemented)**
 - HW-06: Generative Adversarial Networks (GAN)  **(⚠️ Not Yet Implemented)**
