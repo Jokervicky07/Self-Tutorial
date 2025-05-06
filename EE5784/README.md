@@ -28,7 +28,7 @@ This repository contains my code implementations and reports for the assignments
 - HW-15: Meta Learning **(⚠️ Not Yet Implemented)**
 
 ## Utilize Component
-Here are all my repoduced version of utilized function encountered from my above lab.
+Here are all my repoduced version of utilized function encountered from my above lab, which strengthen my understanding.
 
 ## Code Template
 The code for each homework assignment is based on the template provided by the course instructor and teaching assistants. If there are any concerns regarding copyright or related issues, please contact me immediately at jokervicky07@gmail.com
