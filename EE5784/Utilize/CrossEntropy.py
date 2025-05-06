@@ -32,5 +32,30 @@ class CrossEntropy(nn.Module):
             tensor: Cross-entropy loss.
         """
         logsoftmax_input = F.log_softmax(input, dim=1)
+        
+        """
+        \[
+        \ell(x, y)
+        = L = [\,l_1, \dots, l_N\,]^\top,
+        \quad
+        l_n = -\,w_{y_n}\,x_{n, y_n},
+        \quad
+        w_c = \mathrm{weight}[c]\;\mathbf{1}\{c \neq \text{ignore\_index}\}\,.
+        \]
 
+        \[
+        \ell(x, y) =
+        \begin{cases}
+        \displaystyle
+        \frac{1}{\sum_{n=1}^N w_{y_n}}\sum_{n=1}^N l_n,
+        &\text{if reduction = `mean'},\\[1ex]
+        \displaystyle
+        \sum_{n=1}^N l_n,
+        &\text{if reduction = `sum'}.
+        \end{cases}
+        \]
+        \]
+
+        """
+        # nll_loss = -logsoftmax_input.gather(1, target.view(-1, 1)).squeeze(1)
         return F.nll_loss(logsoftmax_input, target, weight=self.weight, reduction=self.reduction)

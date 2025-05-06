@@ -13,7 +13,7 @@ This repository contains my code implementations and reports for the assignments
 ## Homework Titles
 - HW-01: Regression  
 - HW-02: Classification  
-- HW-03: Convolutional Neural Networks (CNN)  **Next: finish cross-validation and Focalloss**
+- HW-03: Convolutional Neural Networks (CNN)  
 - HW-04: Self-Attention Mechanisms  **(⚠️ Not Yet Implemented)**
 - HW-05: Transformer Architecture  **(⚠️ Not Yet Implemented)**
 - HW-06: Generative Adversarial Networks (GAN)  **(⚠️ Not Yet Implemented)**
@@ -26,6 +26,9 @@ This repository contains my code implementations and reports for the assignments
 - HW-13: Compression Techniques  **(⚠️ Not Yet Implemented)**
 - HW-14: Life-long Learning **(⚠️ Not Yet Implemented)**
 - HW-15: Meta Learning **(⚠️ Not Yet Implemented)**
+
+## Utilize Component
+Here are all my repoduced version of utilized function encountered from my above lab.
 
 ## Code Template
 The code for each homework assignment is based on the template provided by the course instructor and teaching assistants. If there are any concerns regarding copyright or related issues, please contact me immediately at jokervicky07@gmail.com
