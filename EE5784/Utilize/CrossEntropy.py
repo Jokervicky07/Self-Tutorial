@@ -57,5 +57,6 @@ class CrossEntropy(nn.Module):
         \]
 
         """
+        
         # nll_loss = -logsoftmax_input.gather(1, target.view(-1, 1)).squeeze(1)
         return F.nll_loss(logsoftmax_input, target, weight=self.weight, reduction=self.reduction)
