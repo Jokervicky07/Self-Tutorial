@@ -21,6 +21,7 @@ This project serves as a **personal learning archive**, helping me track my prog
 Here is a list of courses I’ve added so far (and continuously updating):
 
 - `EE5784 Deep Learning` (Updating now)
+- `CSIC30166 Edge AI` (Updating now)
 
 > 📌 More courses will be added over time, including advanced machine learning, computer vision, NLP, systems programming, and more.
 
