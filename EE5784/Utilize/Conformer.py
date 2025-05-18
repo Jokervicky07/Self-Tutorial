@@ -15,7 +15,7 @@ class FeedForward(nn.Module):
         return self.ffn(x)
 
 class ConformerLayer(nn.Module):
-    def __init__(self, d_model, n_heads, ff_mult=4, conv_kernel=31, dropout=0.1):
+    def __init__(self, d_model, n_heads, expansion_factor=2, ff_mult=4, conv_kernel=15, dropout=0.1):
         super(ConformerLayer, self).__init__()
 
         self.ffn1 = FeedForward(d_model, ff_mult, dropout)
@@ -26,17 +26,18 @@ class ConformerLayer(nn.Module):
         padding = conv_kernel // 2
         # input: (length, batch size, d_model), but the input dimension of Conv1d is (batch size, d_model, length)
         # so we need to rearrange the input tensor
+        inner_dim = d_model * expansion_factor
         self.conv = nn.Sequential(nn.LayerNorm(d_model),
                                   Rearrange('l b d -> b d l'),
-                                  nn.Conv1d(in_channels=d_model,out_channels=2*d_model,kernel_size=1,bias=False),
+                                  nn.Conv1d(in_channels=d_model,out_channels=2*inner_dim,kernel_size=1,bias=False),
                                   nn.GLU(dim=1),
-                                  nn.Conv1d(in_channels=d_model,out_channels=d_model,kernel_size=conv_kernel,
-                                            padding=padding,groups=d_model,bias=False),
-                                  nn.BatchNorm1d(d_model),
+                                  nn.Conv1d(in_channels=inner_dim,out_channels=inner_dim,kernel_size=conv_kernel,
+                                            padding=padding,groups=inner_dim,bias=False),
+                                  nn.BatchNorm1d(inner_dim),
                                   nn.SiLU(),
-                                  nn.Conv1d(in_channels=d_model,out_channels=d_model,kernel_size=1,bias=False),
-                                  nn.Dropout(dropout),
-                                  Rearrange('b d l -> l b d'))
+                                  nn.Conv1d(in_channels=inner_dim,out_channels=d_model,kernel_size=1,bias=False),
+                                  Rearrange('b d l -> l b d'),
+                                  nn.Dropout(dropout))
         
         self.ffn2 = FeedForward(d_model, ff_mult, dropout)
         
