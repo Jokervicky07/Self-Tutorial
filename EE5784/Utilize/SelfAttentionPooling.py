@@ -8,14 +8,14 @@ class SelfAttentionPooling(nn.Module):
         super(SelfAttentionPooling, self).__init__()
 
         # if attn_dim is None, use d_model
-        self.attn_dim = d_model or attn_dim
+        self.attn_dim = attn_dim or d_model
         self.linear = nn.Linear(d_model, self.attn_dim, bias=True)
         self.v = nn.Linear(self.attn_dim, 1, bias=False)
 
     def forward(self, x):
         # x: (batch_size, seq_len, d_model)
-        # linear: (d_model, attn_dim)
-        # attn: (batch_size, seq_len, attn_dim)
+        # u = tanh(x @ W + b)  -> (batch, seq_len, attn_dim)
+        # attn_score = u @ v -> (batch, seq_len, 1)
 
         # activate: attn_score = tanh(x * W + b)v
         # attn-score: (batch_size, seq_len, 1)
