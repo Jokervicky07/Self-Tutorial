@@ -9,7 +9,7 @@ class CosineLinear(nn.Module):
         self.weight = nn.Parameter(torch.randn(out_features, in_features))
         self.s = s
 
-    def forward(self, x, label=None):
+    def forward(self, x):
         x_norm = F.normalize(x, p=2, dim=1)
         weight_norm = F.normalize(self.weight, p=2, dim=1)
         
