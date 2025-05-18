@@ -14,7 +14,7 @@ This repository contains my code implementations and reports for the assignments
 - HW-01: Regression  
 - HW-02: Classification  
 - HW-03: Convolutional Neural Networks (CNN)  
-- HW-04: Self-Attention Mechanisms  **(⚠️ Not Yet Implemented)**
+- HW-04: Self-Attention Mechanisms
 - HW-05: Transformer Architecture  **(⚠️ Not Yet Implemented)**
 - HW-06: Generative Adversarial Networks (GAN)  **(⚠️ Not Yet Implemented)**
 - HW-07: Bidirectional Encoder Representations from Transformers (BERT)  **(⚠️ Not Yet Implemented)**
