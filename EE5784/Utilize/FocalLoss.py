@@ -43,11 +43,22 @@ class FocalLoss(nn.Module):
 
         """
         \[
-        \mathrm{FL}(p_t) = -\,(1 - p_t)^{r}\,\log\bigl(p_t\bigr)
+        \mathrm{FL}(p_t) = -\(1 - p_t)^{r}\) \log\bigl(p_t\bigr)
         \]
         """
         # Apply softmax to get probabilities
         probs = F.softmax(input, dim=1).gather(1, target.view(-1, 1)).squeeze(1)
+
+        # example:
+        # input = torch.tensor([[0.1, 0.9], [0.8, 0.2]])   batch size 2, num classes 2
+        # target = torch.tensor([1, 0]) shape is (2,)
+        # prob_matrix = F.softmax(input, dim=1)
+        # prob_matrix = torch.tensor([[0.4750, 0.5250], [0.6682, 0.3318]]) shape is (2, 2)
+        # target.view(-1, 1) = torch.tensor([[1], [0]]) shape is (2, 1)
+        # selected_prob = prob_matrix.gather(1, target.view(-1, 1)) = torch.tensor([[0.5250], [0.6682]]) shape is (2, 1)
+        # the above is equivalent to: selected_prob[i,0]= prob_matrix[i, target[i]]
+        # probs = selected_prob.squeeze(1) = torch.tensor([0.5250, 0.6682]) shape is (2,)
+
         
         # Compute the focal loss
         log_probs = F.log_softmax(input, dim=1).gather(1, target.view(-1, 1)).squeeze(1)
