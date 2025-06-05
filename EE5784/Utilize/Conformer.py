@@ -14,6 +14,7 @@ class FeedForward(nn.Module):
     def forward(self, x):
         return self.ffn(x)
 
+# https://arxiv.org/pdf/2005.08100
 class ConformerLayer(nn.Module):
     def __init__(self, d_model, n_heads, expansion_factor=2, ff_mult=4, conv_kernel=15, dropout=0.1):
         super(ConformerLayer, self).__init__()
