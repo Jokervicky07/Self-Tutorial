@@ -34,6 +34,7 @@ class CrossEntropy(nn.Module):
         logsoftmax_input = F.log_softmax(input, dim=1)
         
         """
+        https://docs.pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html
         \[
         \ell(x, y)
         = L = [\,l_1, \dots, l_N\,]^\top,
