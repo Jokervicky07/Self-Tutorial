@@ -7,13 +7,13 @@
 ## Repository Structure
 
 - **lora/**  
-  Placeholder for LoRA fine-tuning experiments and related scripts.
+  LoRA fine-tuning experiments and related scripts.
 
 - **vllm/**  
-  Placeholder for vLLM inference tests, benchmarks, and performance comparisons.
+  vLLM inference tests, benchmarks, and performance comparisons.
 
 - **sglang/**  
-  Placeholder for SGlang practice, example scripts, and documentation.
+  SGlang practice, example scripts, and documentation.
 
 - **docs/**  
   Notes, resources, and high-level references for LLM concepts.
